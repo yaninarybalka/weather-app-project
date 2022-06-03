@@ -1,0 +1,143 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/036/166/original/clouds.jpg?1654251208);
+  background-size: cover;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #a5acbc;
+  opacity: 0.7;
+  height: 550px;
+  width: 600px;
+  border: 2px solid #a5acbc;
+  box-shadow: 13px 15px 21px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+  text-align: right;
+  margin: 20px 0 40px;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 200;
+}
+
+.city-searcher {
+  border-radius: 30px;
+  border: 1px solid #d8907c;
+}
+.button {
+  background-color: #e0a494;
+  border: 1px solid #d8907c;
+  border-radius: 30px;
+  transition: all 150ms ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #d8907c;
+}
+
+.geo-button {
+  background-color: #e0a494;
+  border: 1px solid #d8907c;
+  border-radius: 30px;
+  transition: all 150ms ease-in-out;
+  padding: 0;
+}
+
+.geo-button:hover {
+  cursor: pointer;
+  background-color: #d8907c;
+}
+.current {
+  margin-bottom: 70px;
+
+  text-align: justify;
+}
+.current-city {
+  font-size: 40px;
+  text-align: justify;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  text-shadow: 5px 5px 7px #e8d9b9;
+}
+
+.current-date {
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.current-weather {
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-size: 25px;
+}
+.city-icon {
+  font-size: 35px;
+  margin-top: 20px;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  text-shadow: 5px 5px 7px #e8d9b9;
+  text-align: center;
+}
+
+.weather-information {
+  font-size: 25px;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}
+
+.day1,
+.day2,
+.day3,
+.day4,
+.day5 {
+  background-color: #e0a494;
+  opacity: 0.9;
+  border-radius: 30px;
+  border: 1px solid #e0a494;
+  margin: 0 5px;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Inconsolata", monospace;
+}
+.day-name {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 400;
+}
+.weather-picture {
+  text-align: center;
+}
+
+.day-temperature {
+  text-align: center;
+}
+
+.weather-saying {
+  text-align: center;
+  margin: 40px 0;
+  font-family: cursive;
+  font-weight: 500;
+}
+
+footer {
+  font-family: monospace;
+  text-align: center;
+  margin: 30px 0;
+}
+a {
+  color: #d8907c;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+  font-weight: 900;
+}
+a:hover {
+  color: #a5acbc;
+}
