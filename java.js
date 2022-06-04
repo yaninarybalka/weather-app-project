@@ -30,7 +30,9 @@ function displayTemp(response) {
   let city = document.querySelector("#current-city");
   city.innerHTML = response.data.name;
 
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemp = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemp);
   let currentTemperature = document.querySelector("#current-temp");
   currentTemperature.innerHTML = `${temperature}`;
 
@@ -86,12 +88,24 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-displayDate(new Date());
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celciusTemp = null;
+
+let fahrenheitLink = document.querySelector("#farenheit-sign");
+fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSearch);
 
 let geoButton = document.querySelector("#geolocation-button");
 geoButton.addEventListener("click", getCurrentLocation);
+
+displayDate(new Date());
 
 searchCity("Ternopil");
