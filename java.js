@@ -50,6 +50,13 @@ function displayTemp(response) {
     "#current-weather-description"
   );
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
+
+  let cityIcon = document.querySelector("#city-icon");
+  let iconElement = response.data.weather[0].icon;
+  cityIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconElement}@2x.png`
+  );
 }
 
 function searchCity(city) {
