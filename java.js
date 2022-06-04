@@ -93,9 +93,22 @@ function showFahrenheit(event) {
   let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
   let tempElement = document.querySelector("#current-temp");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(celciusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 let celciusTemp = null;
+
+let celsiusLink = document.querySelector("#celsius-sign");
+celsiusLink.addEventListener("click", showCelsius);
 
 let fahrenheitLink = document.querySelector("#farenheit-sign");
 fahrenheitLink.addEventListener("click", showFahrenheit);

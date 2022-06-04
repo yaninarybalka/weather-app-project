@@ -88,6 +88,26 @@ body {
   text-align: center;
 }
 
+.temp-link {
+  color: #d8907c;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+  font-weight: 900;
+}
+.temp-link:hover {
+  color: #a5acbc;
+}
+
+.active {
+  color: var(--bs-body-color);
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
 .weather-information {
   font-size: 25px;
   font-family: "Abril Fatface", cursive;
@@ -133,12 +153,12 @@ footer {
   text-align: center;
   margin: 30px 0;
 }
-a {
+.closing-info {
   color: #d8907c;
   text-decoration: none;
   transition: all 150ms ease-in-out;
   font-weight: 900;
 }
-a:hover {
+.closing-info:hover {
   color: #a5acbc;
 }
