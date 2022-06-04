@@ -105,6 +105,24 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecast = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      `<div class="col day1">
+                <div class="day-name">${day}</div>
+                <div class="weather-picture">☀</div>
+                <div class="day-temperature"><strong> 23° </strong> / 8°C</div>
+              </div>`;
+  });
+
+  forecast = forecast + `</div>`;
+  forecastElement.innerHTML = forecast;
+}
+
 let celciusTemp = null;
 
 let celsiusLink = document.querySelector("#celsius-sign");
@@ -120,5 +138,6 @@ let geoButton = document.querySelector("#geolocation-button");
 geoButton.addEventListener("click", getCurrentLocation);
 
 displayDate(new Date());
+displayForecast();
 
 searchCity("Ternopil");
