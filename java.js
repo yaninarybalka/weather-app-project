@@ -27,7 +27,7 @@ function displayDate(currentTime) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "0e951398a3cfa9bd7988ab651edd4068";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -111,19 +111,34 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function formatForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecast = `<div class="row">`;
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecast =
-      forecast +
-      `<div class="col day1">
-                <div class="day-name">${day}</div>
-                <div class="weather-picture">☀</div>
-                <div class="day-temperature"><strong> 23° </strong> / 8°C</div>
+
+  forecastData.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecast =
+        forecast +
+        `<div class="col day1">
+                <div class="day-name">${formatForecast(forecastDay.dt)}</div>
+                <div class="weather-picture"> <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"  width="50">  </img></div>
+                <div class="day-temperature"><strong> ${Math.round(
+                  forecastDay.temp.max
+                )}° </strong> / ${Math.round(forecastDay.temp.min)}°C</div>
               </div>`;
+    }
   });
 
   forecast = forecast + `</div>`;
