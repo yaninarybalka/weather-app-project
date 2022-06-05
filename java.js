@@ -24,9 +24,14 @@ function displayDate(currentTime) {
   dateInfo.innerHTML = `${day}, ${hour}:${minute}`;
 }
 
-function displayTemp(response) {
-  console.log(response);
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0e951398a3cfa9bd7988ab651edd4068";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
+function displayTemp(response) {
   let city = document.querySelector("#current-city");
   city.innerHTML = response.data.name;
 
@@ -59,6 +64,7 @@ function displayTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${iconElement}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -105,7 +111,8 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecast = `<div class="row">`;
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -138,6 +145,5 @@ let geoButton = document.querySelector("#geolocation-button");
 geoButton.addEventListener("click", getCurrentLocation);
 
 displayDate(new Date());
-displayForecast();
 
 searchCity("Ternopil");
