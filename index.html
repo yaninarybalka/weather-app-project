@@ -24,22 +24,8 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <form>
-            <div class="search-bar">
-              <input
-                type="text"
-                placeholder="Enter a city"
-                class="city-searcher"
-                id="search-button"
-                autocomplete="off"
-              />
-              <input type="submit" value="Search" class="button" />
-              <button class="geo-button" id="geolocation-button">📍</button>
-            </div>
-          </form>
-
-          <div class="row current">
-            <div class="col">
+          <div class="row">
+            <div class="col-5 city-info">
               <div class="current-city" id="current-city"></div>
               <div class="current-date" id="current-time"></div>
               <div
@@ -48,27 +34,47 @@
               ></div>
             </div>
 
-            <div class="col-4">
+            <div class="col-7">
+              <form>
+                <div class="search-bar">
+                  <input
+                    type="text"
+                    placeholder="Enter a city"
+                    class="city-searcher"
+                    id="search-button"
+                    autocomplete="off"
+                  />
+                  <input type="submit" value="Search" class="button" />
+                  <button class="geo-button" id="geolocation-button">📍</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row current">
+            <div class="col-6">
               <div class="city-icon">
-                <img src="" id="city-icon" />
-                <span id="current-temp"></span
-                ><a
-                  href="#"
-                  target="_blank"
-                  class="active temp-link"
-                  id="celsius-sign"
-                  >°C</a
-                >|<a
-                  href="#"
-                  target="_blank"
-                  class="temp-link"
-                  id="farenheit-sign"
-                  >°F</a
-                >
+                <img src="" id="city-icon" class="icon" />
+                <span class="current-temp" id="current-temp"></span>
+                <span class="temp-sign"
+                  ><a
+                    href="#"
+                    target="_blank"
+                    class="active temp-link"
+                    id="celsius-sign"
+                    >°C</a
+                  >|<a
+                    href="#"
+                    target="_blank"
+                    class="temp-link"
+                    id="farenheit-sign"
+                    >°F</a
+                  >
+                </span>
               </div>
             </div>
 
-            <div class="col">
+            <div class="col-6">
               <div class="weather-information">
                 <div>Feels like: <span id="feels-like"></span></div>
                 <div>Wind: <span id="wind-speed"></span></div>
@@ -91,6 +97,7 @@
           <hr />
         </div>
       </div>
+
       <footer>
         <a
           class="closing-info"

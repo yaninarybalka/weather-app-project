@@ -42,7 +42,7 @@ function displayTemp(response) {
 
   let realTemp = document.querySelector("#feels-like");
   let realTempValue = Math.round(response.data.main.feels_like);
-  realTemp.innerHTML = `${realTempValue}° C`;
+  realTemp.innerHTML = `${realTempValue}°C`;
 
   let wind = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);

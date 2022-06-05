@@ -16,10 +16,15 @@ body {
 
 .search-bar {
   text-align: right;
-  margin: 20px 0 40px;
+  margin: 35px 0 40px;
   font-family: "Abril Fatface", cursive;
   font-family: "Inconsolata", monospace;
   font-weight: 200;
+}
+
+.city-info {
+  padding-top: 30px;
+  padding-left: 25px;
 }
 
 .city-searcher {
@@ -51,7 +56,8 @@ body {
   background-color: #d8907c;
 }
 .current {
-  margin-bottom: 70px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 
   text-align: justify;
 }
@@ -79,13 +85,24 @@ body {
 }
 
 .city-icon {
-  font-size: 35px;
   margin-top: 20px;
   font-family: "Abril Fatface", cursive;
   font-family: "Inconsolata", monospace;
   font-weight: 500;
   text-shadow: 5px 5px 7px #e8d9b9;
   text-align: center;
+}
+
+.icon {
+  width: 100px;
+}
+
+.current-temp {
+  font-size: 40px;
+}
+
+.temp-sign {
+  font-size: 35px;
 }
 
 .temp-link {
@@ -113,13 +130,10 @@ body {
   font-family: "Abril Fatface", cursive;
   font-family: "Inconsolata", monospace;
   font-weight: 400;
+  margin-left: 35px;
 }
 
-.day1,
-.day2,
-.day3,
-.day4,
-.day5 {
+.day1 {
   background-color: #e0a494;
   opacity: 0.9;
   border-radius: 30px;
